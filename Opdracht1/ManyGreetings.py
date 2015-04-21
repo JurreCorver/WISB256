@@ -1,4 +1,6 @@
 #first exercise
 
 name = input("What is your name? ")
-print("Hello, " + name + "!")
+amount = input("How many greetings? ")
+print(amount + " x Hello, " + name + "!")
+
