@@ -29,9 +29,9 @@ C2 = 0.6601618
 down = (2 * C2 * N)/ math.log(N)**2
 
 
-print('Largest Prime = ' ,int( primelist[length-1]), '\n--------------------------------\n' + 'pi(N)         =  ' + str(length))  
+print('Largest Prime = ' ,int( primelist[length-1]), '\n-----------------------------------\n' + 'pi(N)         =  ' + str(length))  
 print('N/log(N)      =  ' + str(denominator))
-print('ratio         =  ' + str(ratio)+ '\n--------------------------------')
+print('ratio         =  ' + str(ratio)+ '\n-----------------------------------')
 print('pi_2(N)       =  ' +str(twinlength) )
 print('2CN/log(N)^2  =  ' + str(down))
 print('ratio         =  ' + str(twinlength/down))
