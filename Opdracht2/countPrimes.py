@@ -21,7 +21,7 @@ while True:
     
     length +=1    
 
-N = float(primelist[length -1])  +1  
+N = float(primelist[length -1])   
 numerator = length
 denominator = N / math.log(N)
 ratio = numerator/denominator 
