@@ -9,14 +9,20 @@ def findRoot(f,a,b,epsilon):
     if abs(b-a) < epsilon:
         return(m)
         
-    if links*midden <=0:
+    if links*midden < 0:
         sol = findRoot(f,a,m,epsilon) 
         return(sol)
         
-    elif rechts*midden <= 0:   
+    elif rechts*midden < 0:   
         sol = findRoot(f,m,b,epsilon) 
         return(sol)
-solutions = []
+    elif links == 0:
+        return links
+    elif midden == 0:
+        return midden
+    elif rechts == 0:
+        return rechts
+
 
 def findAllRoots(f,a,b,epsilon):
     links = f(a)
