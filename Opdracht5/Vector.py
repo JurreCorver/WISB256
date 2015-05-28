@@ -3,10 +3,11 @@ from array import array
 
 class Vector():
     
-    __slots__ = ('_n, _vect')
+    __slots__ = ('_n', '_vect')
     
     def __init__(self, n = 3, vect = 0):
         self._n = n
+        self._vect = vect
         
         
         if type(vect) is list:
@@ -47,3 +48,37 @@ class Vector():
         w = w**0.5
         
         return w
+    
+    def clone(self):
+        return Vector(self._n, [self._vect[i] for i in range(0, self._n)])
+        
+        
+def GrammSchmidt(V):
+        
+    
+    n = len(V)
+    vectlist = [V[i] for i in range(0,n)]
+    
+    for i in range(0, n):
+        for j in range(0, i):
+            vectlist[i] = Vector.lincomb(vectlist[i],  proj(V[i], vectlist[j] ) ,1, -1)
+            
+    for i in range(0,n):
+        grootte = (1/vectlist[i].norm())
+        vectlist[i] = vectlist[i].scalar(grootte)
+    
+    return vectlist        
+    
+        
+   # for i in range(0,n):
+    #    for j in range(0, i):
+     #       V[i] = V[i].lincomb(proj(vectlist[j]), 1, -1)
+      #  #print V[i]
+       # vectlist.append(V[i])
+    #return vectlist
+        
+def proj(q, r):
+    
+    
+    vect = r.scalar(q.inner(r)/(r.inner(r)))
+    return(vect)    
