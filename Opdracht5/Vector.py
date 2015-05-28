@@ -3,11 +3,11 @@ from array import array
 
 class Vector():
     
-    __slots__ = ('_n', '_vect')
+    __slots__ = ('_n', '_v')
     
     def __init__(self, n = 3, vect = 0):
         self._n = n
-        self._vect = vect
+        self._v = vect
         
         
         if type(vect) is list:
@@ -50,7 +50,7 @@ class Vector():
         return w
     
     def clone(self):
-        return Vector(self._n, [self._vect[i] for i in range(0, self._n)])
+        return Vector(self._n, [self._v[i] for i in range(0, self._n)])
         
         
 def GrammSchmidt(V):
