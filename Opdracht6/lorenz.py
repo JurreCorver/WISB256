@@ -41,8 +41,8 @@ class Lorenz():
 
         # initial conditions
         y0 = self._xyz
-        t  = np.linspace(0, T, T/dt)   # time grid
-        
+        t  = np.linspace(0, T, T/dt+1)   # time grid
+        #print(t[0::10])
        
         
         # solve the DEs

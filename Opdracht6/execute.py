@@ -1,4 +1,4 @@
-from Lorenz import *
+from lorenz import *
 import numpy
 from scipy.integrate import odeint
 
