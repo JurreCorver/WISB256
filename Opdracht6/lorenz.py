@@ -41,15 +41,17 @@ class Lorenz():
 
         # initial conditions
         y0 = self._xyz
-        t  = np.linspace(0, T, T/dt+1)   # time grid
+        #t  = np.linspace(0, T, T/dt+1)# time grid
+        t = np.arange(0, T, dt)
+        
         #print(t[0::10])
-       
+        #print(t[-1])
         
         # solve the DEs
         soln = odeint(f, y0, t)
         S = soln[:, 0]
-        Z = soln[:, 1]
-        R = soln[:, 2]
+        #Z = soln[:, 1]
+        #R = soln[:, 2]
         self._sol = S
          
         
