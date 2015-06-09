@@ -2,6 +2,7 @@ __AUTHOR__  = 'Jurre'
 from array import array
 import numpy as np
 from scipy.integrate import odeint
+from numpy.linalg import eig
 
 class Lorenz():
     
@@ -26,7 +27,20 @@ class Lorenz():
     #def __getitem__(self, a, b):
         #return self._sol
     
-
+    def df(self, u):
+            deriv = np.array([[-self._sigma, self._sigma, 0], [self._rho - u[2], -1, u[0] ], [u[1], u[0], -self._beta]])
+            return(deriv)
+    
+    def isStable(self,u):
+        eigens = eig(self.df(u))[0]
+        state = True
+        for i in range(0, len(eigens)):
+            if eigens[i] >= 0:
+                return False
+        
+        return state        
+        
+        
 
     def solve(self, T,dt):
         
@@ -54,7 +68,6 @@ class Lorenz():
         #R = soln[:, 2]
         self._sol = S
          
-        
         return soln
             
 
