@@ -35,7 +35,7 @@ class Lorenz():
         eigens = eig(self.df(u))[0]
         state = True
         for i in range(0, len(eigens)):
-            if eigens[i] >= 0:
+            if eigens[i].real >= 0:
                 return False
         
         return state        
