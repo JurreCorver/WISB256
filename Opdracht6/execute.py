@@ -14,6 +14,6 @@ print(u1[0,0],u2[0,0]) # print values of x at t=0
 print(u1[5000-1,0],u2[-1,0]) # print values of x at t=50
 
 print(L1.df([1,1,1]))
-L1.isStable([1,1,1])
+print(L1.isStable([1,1,1]))
 
 

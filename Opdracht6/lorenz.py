@@ -32,13 +32,14 @@ class Lorenz():
             return(deriv)
     
     def isStable(self,u):
-        eigens = eig(self.df(u))[0]
-        state = True
-        for i in range(0, len(eigens)):
-            if eigens[i].real >= 0:
+        eigens = eig(self.df(u))[0].real
+        #print(eigens)
+        
+        for i in eigens:
+            if i >= 0:
                 return False
         
-        return state        
+        return True       
         
         
 
