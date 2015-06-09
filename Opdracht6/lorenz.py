@@ -28,7 +28,7 @@ class Lorenz():
         #return self._sol
     
     def df(self, u):
-            deriv = np.array([[-self._sigma, self._sigma, 0], [self._rho - u[2], -1, u[0] ], [u[1], u[0], -self._beta]])
+            deriv = np.array([[-self._sigma, self._sigma, 0], [self._rho - u[2], -1, -u[0] ], [u[1], u[0], -self._beta]])
             return(deriv)
     
     def isStable(self,u):
