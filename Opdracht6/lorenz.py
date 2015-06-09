@@ -34,7 +34,7 @@ class Lorenz():
          
             
             f0 = self._sigma * (y[1] - y[0])
-            f1 = y[0] * (self._rho - y[2] - y[1])
+            f1 = y[0] * (self._rho - y[2]) - y[1]
             f2 = y[0]*y[1] - self._beta * y[2]
             
             return [f0, f1, f2]
